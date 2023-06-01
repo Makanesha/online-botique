@@ -1,0 +1,118 @@
+<html>
+<head>
+  <style type="text/css">
+		body {
+			background-color: #ededed;
+			font-family: sans-serif;
+		}
+		.form-container {
+			background-color: #fefcfc;
+			border: 2px solid #f9f9f9;
+			width: 400px;
+			height: 400px;
+			padding: 20px;
+			margin: 30px auto;
+			box-shadow: 6px 6px 8px black;
+		}
+		.form-container input {
+			width: 360px;
+			border: 1px solid #ccc;
+			margin-bottom: 5px;
+			padding: 8px;
+			text-align: center;
+		}
+		.form-container button {
+			background-color: #008080;
+			border: none;
+			color: #ffffff;
+			padding: 0 20px;
+			cursor: pointer;
+			margin-left: 5px;
+			transition: 0.5s;
+		}
+		.form-container button:hover {
+			background-color: #006363;
+		}
+    .error {
+      color: red;
+      font-weight: bold;
+}
+	</style>
+
+
+</head>
+<body style="background-image: url('bdt.jpg');background-repeat: no-repeat;background-size: 100%;">
+	
+<div class="form-container">
+	<center><h1>Create Account</h1></center>
+<form name="myForm" method="post" action="mainpro.html" onsubmit="return validation()">
+	<center></span><input style="background-color: lightgray;" type="text" name="name" id="name"autofocus placeholder="name">
+  
+  <br><br>
+   <input  style="background-color: lightgray;"type="text" name="email" id="email"autofocus placeholder="email">
+ 
+  <br><br>
+  <input  style="background-color: lightgray;"type="password" name="password"autofocus placeholder="password"><br><br>
+<input  style="background-color: lightgray;"type="password" name="confirmpassword"autofocus placeholder="confirm password"><br><br>
+<a href="mainpro.html"><input style="background-color:darkgreen;padding: 15px;font-size: 20px;"type="submit" name="Continue" value="continue"></a><br>
+<center>Already have an account?<a href="index.html"> sign in</a></center>
+</div>
+</form></body></center>
+
+<script>
+function validation(){
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  if(name=="" || !name.match(/^[a-zA-Z]+$/))
+{
+alert("Name should be filled out with alphabets only");
+return false;
+}
+if(document.forms["myForm"]["password"].value.length<8)
+{
+alert("Password should contain atleast 8 characters");
+return false;
+}
+if(document.forms["myForm"]["password"].value==document.forms["myForm"]["name"].value)
+{
+alert("Password should not be same as name");
+return false;
+}
+
+if(document.forms["myForm"]["password"].value!=document.forms["myForm"]["confirmpassword"].value)
+{
+alert("Password and Confirm Password should be same");
+return false;
+}
+  if (name.length < 5) {
+    alert("Name must be more than 5 characters");
+    return false;
+  }
+  if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+    alert("Please enter a valid email address");
+    return false;
+  }
+  if(document.forms["myForm"]["password"].value.length<8)
+{
+alert("Password should contain atleast 8 characters");
+return false;
+}
+
+if(document.forms["myForm"]["password"].value==document.forms["myForm"]["name"].value)
+{
+alert("Password should not be same as name");
+return false;
+}
+
+if(document.forms["myForm"]["password"].value!=document.forms["myForm"]["confirmpassword"].value)
+{
+alert("Password and Confirm Password should be same");
+return false;
+}
+}
+  
+</script>
+
+</body>
+</html>
+ 
